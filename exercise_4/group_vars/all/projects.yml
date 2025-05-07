@@ -12,4 +12,3 @@ controller_projects:
     scm_credential: github
     update_project: true
     wait: true
-...

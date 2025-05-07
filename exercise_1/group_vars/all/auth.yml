@@ -8,7 +8,7 @@ controller_request_timeout: 60
 ah_host: "{{ ah_hostname | default( 'hub.' + lookup('ansible.builtin.env', 'INSTRUQT_PARTICIPANT_ID') + '.instruqt.io' )}}"
 ah_username: "{{ ah_user | default('admin') }}"
 ah_password: "{{ ah_pass }}"
-ah_path_prefix: 'galaxy'  # this is for private automation hub
+ah_path_prefix: galaxy # this is for private automation hub
 ah_validate_certs: false
 
 ee_registry_username: "{{ ah_username }}"
@@ -18,4 +18,3 @@ ee_registry_dest: "{{ ah_host }}"
 ee_base_registry: "{{ ah_host }}"
 ee_base_registry_username: "{{ ah_username }}"
 ee_base_registry_password: "{{ ah_password }}"
-...

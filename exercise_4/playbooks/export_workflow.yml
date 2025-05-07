@@ -3,7 +3,7 @@
   hosts: automationcontroller
   gather_facts: false
   vars_files:
-    - "../vault.yml"
+    - ../vault.yml
   environment:
     CONTROLLER_HOST: "{{ controller_hostname }}"
     CONTROLLER_USERNAME: "{{ controller_username }}"
@@ -25,4 +25,3 @@
       ansible.builtin.copy:
         content: "{{ export_results | to_nice_yaml( width=50, explicit_start=True, explicit_end=True) }}"
         dest: /home/rhel/lab_exercises/group_vars/all/workflow.yaml
-...

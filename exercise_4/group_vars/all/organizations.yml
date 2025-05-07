@@ -6,4 +6,3 @@ controller_organizations:
       - ah_certified
       - community-infra-repo
     default_environment: supported
-...
