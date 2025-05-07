@@ -4,13 +4,12 @@
   gather_facts: false
   connection: local
   vars_files:
-    - "../vault.yml"
+    - ../vault.yml
   tasks:
     - name: Get the Execution environment from controller
       ansible.builtin.set_fact:
-        controller_config_as_code_ee: "{{ lookup('awx.awx.controller_api',
-          'execution_environments', query_params={'name': 'config_as_code'},
-          host=controller_hostname, username=controller_username, password=controller_password, verify_ssl=false) }}"
+        controller_config_as_code_ee: "{{ lookup('awx.awx.controller_api', 'execution_environments', query_params={'name': 'config_as_code'}, host=controller_hostname,
+          username=controller_username, password=controller_password, verify_ssl=false) }}"
 
     - name: Show results of controller
       ansible.builtin.debug:
@@ -28,5 +27,4 @@
       ansible.builtin.assert:
         that:
           - controller_config_as_code_ee.name == 'config_as_code'
-        msg: "Execution Environment name must be config_as_code"
-...
+        msg: Execution Environment name must be config_as_code

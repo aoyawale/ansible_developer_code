@@ -49,4 +49,3 @@ workflow_job_templates:
             name: config_as_code
             type: organization
           type: job_template
-...

@@ -2,7 +2,7 @@
 - name: Playbook to configure ansible controller post installation
   hosts: all
   vars_files:
-    - "../vault.yml"
+    - ../vault.yml
   connection: local
   tasks:
     - name: Include setting role
@@ -43,7 +43,7 @@
             ah_host: "{{ ah_host | default(groups['automationhub'][0]) }}"
             ah_username: "{{ ah_token_username | default('admin') }}"
             ah_password: "{{ ah_token_password }}"
-            ah_path_prefix: 'galaxy'  # this is for private automation hub
+            ah_path_prefix: galaxy # this is for private automation hub
             ah_verify_ssl: false
           register: r_ah_token
 
@@ -128,4 +128,3 @@
       ansible.builtin.include_role:
         name: infra.controller_configuration.roles
       when: controller_roles is defined
-...

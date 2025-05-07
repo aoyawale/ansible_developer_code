@@ -4,7 +4,7 @@
   gather_facts: false
   connection: local
   vars_files:
-    - "../vault.yml"
+    - ../vault.yml
   tasks:
     - name: Include group role
       ansible.builtin.include_role:
@@ -25,4 +25,3 @@
     - name: Include collection repository role
       ansible.builtin.include_role:
         name: infra.ah_configuration.collection_repository_sync
-...

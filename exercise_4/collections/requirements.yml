@@ -6,4 +6,3 @@ collections:
     version: 2.0.3
   - name: awx.awx
     version: 22.4.0
-...

@@ -35,4 +35,3 @@ controller_templates:
     credentials:
       - root
       - ah_admin_user_pass
-...

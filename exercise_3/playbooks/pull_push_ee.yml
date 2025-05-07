@@ -4,9 +4,8 @@
   gather_facts: false
   connection: local
   vars_files:
-    - "../vault.yml"
+    - ../vault.yml
   tasks:
-
     - name: Pull builder images
       containers.podman.podman_image:
         name: quay.io/redhat_cop/instruqt_config_as_code:latest
@@ -39,4 +38,3 @@
           - image: "{{ ah_host }}/config_as_code"
             name: config_as_code
             pull: always
-...
